@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { data, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import Card from "../components/card";
 const Home = () => {
   const [username, setUser] = useState("");
   const [userdata, setUserData] = useState([]);
@@ -20,9 +21,9 @@ const Home = () => {
     console.log(userdata);
   };
 
-  useEffect(()=>{
-    getData()
-  },[])
+  useEffect(() => {
+    getData();
+  }, []);
   // AXIOS PRACTICE
 
   return (
@@ -53,16 +54,18 @@ const Home = () => {
       >
         Get Data
       </button>
-      <div className="bg-amber-500 px-4 py-4 m-10 text-2xl text-white font-bold">
+      <div className=" px-4 flex justify-center flex-wrap items-center gap-6 py-4 m-10 text-2xl text-white font-bold">
         {userdata.map((item, ind) => {
           return (
             <>
               <div key={ind}>
-                <h1>{item.name} ------ <Link to={`/about/${item.id}`}>Explore</Link></h1>
+                <Link to={`/about/${item.id}`}>
+                  <Card  username={item.name} email={item.email} company={item.company.name} address={item.address.street}/>
+                </Link>
               </div>
             </>
           );
-        })}
+        })} 
       </div>
       {/* AXIOS PRACTICE */}
     </>
