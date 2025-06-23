@@ -32,7 +32,7 @@ const Home = () => {
   return (
     <>
       <myContext.Provider value={person_name}>
-        <Button/>
+        <Button />
         {/* TWO WAY BINDING */}
         <form
           onSubmit={(event) => {

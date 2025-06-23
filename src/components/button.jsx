@@ -6,7 +6,7 @@ const Button = () => {
    const nameing = useContext(myContext)
   return (
     <div>
-      <button className='px-3 py-3 text-white font bold bg-amber-700'>{nameing}</button>
+      <button className='px-3 py-3 text-white font bold m-5 bg-amber-700'>{nameing}</button>
     </div>
   )
 }
